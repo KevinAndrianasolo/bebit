@@ -1,0 +1,73 @@
+.swiper {
+    width : 300px;
+    height : auto;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    --swiper-pagination-color : var(--color-night-club);
+    --swiper-pagination-color: var(--color-night-club-gradient);
+    .swiper-pagination{
+        bottom: -30px !important;
+    }
+    .swiper-slide {
+        background-color: #eee;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width : 100% ;
+        height : 100%;
+        border-radius: 20px;
+        overflow: hidden;
+        .slide-content{
+            width : 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            img{
+                object-fit: cover;
+                width: 100%;
+                height : 100%;
+                border-radius: 10px;
+            }
+        }
+    }
+    .swiper-button-prev{
+        left : -100px;
+        background: var(--color-night-club);
+        background: var(--color-night-club-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .swiper-button-next{
+        right : -100px;
+        background: var(--color-night-club);
+        background: var(--color-night-club-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+@media (max-width: 500px) {
+    .swiper {
+        width : 200px;
+        --swiper-navigation-size : 15px;
+        .swiper-button-prev{
+            left : -50px !important;
+        }
+
+        .swiper-button-next{
+            right : -50px !important;
+        }
+        .thumbnail{
+            width : 200px !important;
+            height : 200px !important;
+            box-shadow : 5px 5px 5px #AAA;
+            .thumbnail_text{
+                font-size : 12px;
+                padding : 5px 10px;
+            }
+        }
+    }
+}
+
+  

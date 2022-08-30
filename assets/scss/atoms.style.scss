@@ -1,0 +1,416 @@
+
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    transition: all 250ms ease;
+    margin : 0px;
+    padding: 0px;
+}
+
+:root {
+    --color-white : #fff;
+    --color-black : #000;
+    --color-night-club : rgb(0,205,208);
+    --color-night-club-gradient : linear-gradient(147deg, rgba(0,205,208,1) 0%, rgba(86,86,210,1) 50%, rgba(148,0,212,1) 100%);
+    --color-dark-purple : rgb(60,17,61);
+    --color-dark-purple-gradient : linear-gradient(0deg, rgba(60,17,61,1) 0%, rgba(64,26,68,1) 50%, rgba(122,18,105,1) 100%);
+}
+
+body {
+    margin : 0px;
+    padding: 0px;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: "Oswald";
+}
+
+p, ul, li, span, strong, label, input, button, a, b, option, div{
+    font-family: "Oswald-Light";
+}
+
+h3 {
+    font-size: 30px;
+}
+
+p {
+    font-size: 20px;
+}
+a{
+    text-decoration: none;
+    color : var(--color-dark-purple);
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+.letter-spacing-2{
+    letter-spacing: 2px;
+}
+
+.text-gradient {
+    &.text-gradient--night-club {
+        background: var(--color-night-club);
+        background: var(--color-night-club-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    &.text-gradient--dark-purple {
+        background: var(--color-dark-purple);
+        background: var(--color-dark-purple-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+
+.display-1 {
+    font-family: "boycott";
+    font-size : 100px;
+    font-weight: normal;
+    line-height: 100px;   
+}
+
+.display-2 {
+    font-family: "boycott";
+    font-size : 50px;
+    font-weight: normal;
+}
+.display-3 {
+    font-family: "boycott";
+    font-size : 30px;
+    font-weight: normal;
+}
+.text-center{
+    text-align: center;
+}
+.p-2{
+    padding : 20px 30px;
+}
+.pb-2{
+    padding-bottom : 20px;
+}
+.p-3{
+    padding : 20px 20px;
+}
+
+.load-more{
+    font-size: 15px;
+    margin-top : 10px;
+    &:hover{
+        cursor: pointer;
+        font-style: italic;
+        color : var(--color-dark-purple);
+    }
+}
+.btn {
+    padding: 10px 25px;
+    background-color: transparent;
+    border : 4px solid var(--color-black);
+    font-size: 30px;
+    margin-top : 15px;
+    &.btn--cta{
+        font-family: "boycott";
+        
+    }
+    &.btn--md{
+        font-size: 20px;
+        padding: 5px 20px;
+    }
+    &.btn--light{
+        color : var(--color-white);
+        background-color: transparent;
+        border-color: var(--color-white);
+    }
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.thumbnail{
+    position : relative;
+    border-radius: 20px;
+    overflow : hidden;
+    box-shadow : 10px 10px 10px #AAA;
+    
+    .thumbnail_img{
+        width : 100%;
+        height : 100%;
+        object-fit: cover;
+    }
+    .thumbnail_text{
+        font-size : 30px;
+        text-transform: uppercase;
+        position : absolute;
+        bottom: 0px;
+        right : 0px;
+        font-family: "boycott";
+        color: var(--color-white);
+        padding : 10px 20px;
+        word-break: break-all;
+    }
+    &.thumbnail--md{
+        width : 300px;
+        height : 300px;
+    }
+    &.thumbnail--sm{
+        width : 100px;
+        height : 100px;
+        box-shadow : 5px 5px 5px #AAA;
+        .thumbnail_text{
+            font-size : 12px;
+            padding : 5px 10px;
+        }
+    }
+    &.thumbnail--without-shadow{
+        box-shadow : none;
+    }
+    &:hover{
+        cursor : pointer;
+    }
+}
+.icon {
+    width : 50px;
+    height : 50px;
+    display : inline-block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    &:hover{
+        cursor : pointer;
+    }
+    &.icon-prev{
+        background-image: url('/assets/icons/btn-control.svg');
+    }
+    &.icon-next{
+        background-image: url('/assets/icons/btn-control.svg');
+        transform: rotate(180deg);
+    }
+    &.icon-prev-dark{
+        background-image: url('/assets/icons/prev-dark.svg');
+    }
+    &.icon-next-dark{
+        background-image: url('/assets/icons/prev-dark.svg');
+        transform: rotate(180deg);
+    }
+    &.icon-pin{
+        background-image: url('/assets/icons/pin.svg');
+    }
+    &.icon-notification{
+        background-image: url('/assets/icons/notif.svg');
+    }
+    &.icon-wallet{
+        background-image: url('/assets/icons/wallet.svg');
+    }
+    &.icon-account{
+        background-image: url('/assets/icons/account.svg');
+    }
+    &.icon-setting{
+        background-image: url('/assets/icons/setting.svg');
+    }
+}
+
+.logo{
+    width : 200px;
+    &:hover{
+        cursor : pointer;
+    }
+}
+
+.section-title-img{
+    height : 100px;
+}
+
+
+.full-width{
+    width: 100%;
+}
+.input-group{
+    font-family: "Oswald-Light";
+    display: grid;
+    grid-template-columns: auto 40px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    &.input-group--light{
+        background-color: #fff;
+    }
+    &.input-group--expanded{
+        grid-template-columns: 100%; 
+        width : 100%;
+    }
+    label{
+        display: block;
+        font-size: 12px;
+    }
+    input, select, option, textarea{
+        // min-width : 350px;
+        width : 100%;
+        outline : none;
+        border: none;
+        font-family: "Oswald-Light";
+    }
+    textarea{
+        min-height : 200px;
+    }
+    input#file-upload-button{
+        background-color: red !important;
+    }
+    .input-group-content{
+        padding : 10px;
+    }
+    .input-group-icon-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity : 0.7;
+        .input-group-icon{
+        }
+        &:hover{
+            cursor : pointer;
+            opacity : 1;
+        }
+    }
+    &.input-group--lg{
+        grid-template-columns: auto 60px;
+        label{
+            display: block;
+            font-size: 18px;
+        }
+        input{
+            font-size: 20px;
+            min-width : 100%;
+        }
+        .input-group-icon-container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+    &:focus-within{
+        color : var(--color-dark-purple);
+    }
+    input:focus{
+        color : var(--color-dark-purple);
+    }
+    .input-group-radio-container{
+        display : flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap : 10px;
+    }
+    .input-group-radio{
+        display : flex;
+        align-items: center;
+        justify-content: center;
+        gap : 10px;
+        input{
+            width : auto;
+        }
+    }
+    
+}
+
+.hoverable{
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+
+.app-layout{
+    display : grid;
+    grid-template-columns: 400px auto;
+    height : calc(100vh - 115px);
+    .app-layout-sidebar{
+        
+    }
+}
+
+.mt-20{
+    margin-top : 20px !important;
+}
+.mt-5{
+    margin-top : 5px !important;
+}
+.mt-10{
+    margin-top : 10px !important;
+}
+.float-right{
+    float : right; 
+}
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: var(--color-dark-purple);
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px var(--color-dark-purple);
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+  .bebit-slogan{
+    font-size : 65px;
+    line-height : 65px;
+    font-weight: normal;
+    font-family: "Holland";
+    &.bebit-slogan--light{
+        color : #fff;
+    }
+  }
+  .text-light{
+    color : #fff;
+  }
+  .text-small{
+    font-size : 12px;
+  }
