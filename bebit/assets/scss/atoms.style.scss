@@ -8,6 +8,8 @@
 }
 
 :root {
+    --color-success : rgb(44, 116, 44);
+    --color-danger : rgb(170, 40, 40);
     --color-white : #fff;
     --color-black : #000;
     --color-night-club : rgb(0,205,208);
@@ -303,6 +305,21 @@ a{
         gap : 10px;
         input{
             width : auto;
+        }
+    }
+    .message{
+        font-size : 12px;
+    }
+    &.valid{
+        border-color: var(--color-success);
+        .message{
+            color : var(--color-success);
+        }
+    }
+    &.invalid{
+        border-color: var(--color-danger);
+        .message{
+            color : var(--color-danger);
         }
     }
     
