@@ -66,21 +66,25 @@ a{
 }
 
 .display-1 {
-    font-family: "boycott";
+    // font-family: "boycott";
+    font-family: "Oswald";
     font-size : 100px;
-    font-weight: normal;
-    line-height: 100px;   
+    font-weight: 700;
+    line-height: 100px;
+    text-transform: uppercase;   
 }
 
 .display-2 {
-    font-family: "boycott";
+    font-family: "Oswald";
     font-size : 50px;
-    font-weight: normal;
+    font-weight: 700;
+    text-transform: uppercase;  
 }
 .display-3 {
-    font-family: "boycott";
+    font-family: "Oswald";
     font-size : 30px;
-    font-weight: normal;
+    font-weight: 700;
+    text-transform: uppercase;  
 }
 .text-center{
     text-align: center;
@@ -94,7 +98,9 @@ a{
 .p-3{
     padding : 20px 20px;
 }
-
+.ps-4{
+    padding-left: 25px;
+}
 .load-more{
     font-size: 15px;
     margin-top : 10px;
@@ -111,9 +117,10 @@ a{
     font-size: 30px;
     margin-top : 15px;
     &.btn--cta{
-        font-family: "boycott";
+        font-family: "Oswald";
+        font-weight: 500;
         span{
-            font-family: "boycott";
+            font-family: "Oswald";
         }
     }
     &.btn--with-loader{
@@ -128,6 +135,12 @@ a{
     &.btn--light{
         color : var(--color-white);
         background-color: transparent;
+        border-color: var(--color-white);
+    }
+    &.btn--active{
+        color : var(--color-white);
+        background-color: white;
+        color : var(--color-dark-purple);
         border-color: var(--color-white);
     }
     &:hover {
@@ -354,7 +367,12 @@ a{
         
     }
 }
-
+.ms-5{
+    margin-left : 5px !important;
+}
+.me-5{
+    margin-right : 5px !important;
+}
 .mt-20{
     margin-top : 20px !important;
 }
@@ -364,8 +382,14 @@ a{
 .mt-10{
     margin-top : 10px !important;
 }
+.d-none{
+    display: none;
+}
 .float-right{
     float : right; 
+}
+.float-left{
+    float : left; 
 }
 /* The switch - the box around the slider */
 .switch {
@@ -467,6 +491,14 @@ a{
     100% {
       -webkit-transform: rotate(360deg);
               transform: rotate(360deg); } }
+
+    .loader-container{
+        display :flex;
+        align-items: center;
+        justify-content: center;
+        width : 100%;
+        padding : 20px;
+    }
   .loader{
     --border-width : 2px;
     --width : 15px;
@@ -510,7 +542,40 @@ a{
     text-align: center;
     padding : 50px 30px;
     margin-bottom: 20px;
+    &.alert--transparent{
+        background-color: transparent !important;
+    }
+}
+.m-0{
+    margin: 0px !important;
+}
+.mb-5{
+    margin-bottom: 5px !important;
+}
+.me-10{
+    margin-right: 10px !important;
+}
+.clear-both{
+    clear: both;
 }
 .text-capitalize{
     text-transform: capitalize;
+}
+::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(209, 209, 209, 0.1);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #919296;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #797a80;
 }

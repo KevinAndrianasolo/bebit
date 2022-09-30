@@ -6,11 +6,19 @@
     display : grid;
     grid-template-columns: 55% auto;
     margin-bottom: 10px;
+    max-height : 600px;
+    overflow: hidden;
     .event-img{
         width : 100%;
+        height : 100%;
+        object-fit: cover;
         &:hover{
             cursor : pointer;
         }
+    }
+    .event-description{
+        max-height: 200px;
+        overflow: auto;
     }
     .event-infos{
         position : relative;
@@ -114,6 +122,7 @@
         }
     }
     .section-presentation-text{
+        clear: both;
         margin : 20px 0px;
     }
     .section-presentation-note{
@@ -191,6 +200,7 @@
                 -webkit-text-fill-color: transparent;
             }
             .current-event-date-month{
+                text-transform: capitalize;
                 font-size : 20px;
                 background: var(--color-night-club);
                 background: var(--color-night-club-gradient);
@@ -267,11 +277,16 @@
             .countdown-thumbnails-wrap{
                 color : #fff;
             }
+            .countdown-value{
+                line-height: 50px;
+                text-transform: none;
+            }
         }
     }
 
     &.section-presentation--event-form{
         grid-template-columns: auto 40%;
+        min-height : unset;
     }
 }
 
@@ -285,7 +300,7 @@
 .card{
     display: grid;
     grid-template-columns: 250px auto;
-    width : 45%;
+    width : 100%;
     border: 1px solid #eee;
     border-radius: 20px;
     &.card--expanded{
@@ -310,6 +325,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    .searchbar-container{
+        min-width : 300px;
+    }
 }
 
 .participants-wrap{
@@ -396,6 +414,7 @@
 
 .comments-wrap{
     padding : 30px;
+    
     h3{
         color: #AAA;
         font-weight: normal;
@@ -431,9 +450,16 @@
 
             }
         }
+        .comment-input-wrap{
+            margin-top : 20px;
+        }
         .input-group.input-group--lg label, .input-group.input-group--lg input{
             font-size :14px;
         }
+    }
+    .comments{
+        max-height : 300px;
+        overflow-y: auto;
     }
 }
 
@@ -559,6 +585,10 @@
     margin-bottom: 5px;
     .notification-date{
         font-size: 15px;
+        &.danger{
+            color :rgb(172, 40, 40);
+            font-weight: bolder;
+        }
     }
     .notification-tag{
         float : right;
@@ -619,6 +649,8 @@
 .event-form{
     display : grid;
     grid-template-columns: auto 50% ;
+    height : calc(100vh - 120px);
+    overflow: hidden;
     .event-form-subsection{
         margin-top : 20px;
         p{
@@ -627,46 +659,17 @@
     }
     .event-form-tile{
         padding : 10px;
+        height: 100%;
+        overflow: auto;
     }
-    .event-form-img-preview-wrap{
-        display : flex;
-        gap: 10px;
-        flex-wrap: wrap;
-    }
-    .event-form-img-preview{
-        position : relative;
-        width : 150px;
-        height : 100px;
-        overflow: hidden;
-        border-radius: 10px;
-        border : 1px solid #aaa;
-        background-color: #eee;
-        img{
-            width : 100%;
-            height : 100%;
-            object-fit: cover;
-        }
-        .close-icon{
-            position : absolute;
-            top : 5px;
-            right : 5px;
-            color : #fff;
-            font-size : 20px;
-            &:hover{
-                cursor: pointer;
-            }
-        }
-        &.event-form-img-preview--sm{
-            width : 75px;
-            height : 75px;
-        }
-    }
+    
     .dropdown{
         background-color: #eee;
         border-radius: 10px;
         margin : 10px 0px;
         border : 1px solid #aaa;
         max-height : 200px;
+        min-height : 40px;
         overflow-y: auto;
         .dropdown-item{
             padding : 10px;
@@ -700,7 +703,39 @@
         }
     }
 }
-
+.img-preview-wrap{
+    display : flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.img-preview{
+    position : relative;
+    width : 150px;
+    height : 100px;
+    overflow: hidden;
+    border-radius: 10px;
+    border : 1px solid #aaa;
+    background-color: #eee;
+    img{
+        width : 100%;
+        height : 100%;
+        object-fit: cover;
+    }
+    .close-icon{
+        position : absolute;
+        top : 5px;
+        right : 5px;
+        color : #fff;
+        font-size : 20px;
+        &:hover{
+            cursor: pointer;
+        }
+    }
+    &.img-preview--sm{
+        width : 75px;
+        height : 75px;
+    }
+}
 
 
 .calendar {
