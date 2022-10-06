@@ -79,8 +79,13 @@
         }
         .card-body{
             padding : 20px;
+           
             p{
                 font-size: 14px;
+            }
+            .card-description{
+                max-height : 100px;
+                overflow : auto;
             }
         }
         .thumbnail{

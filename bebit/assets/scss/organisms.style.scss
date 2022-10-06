@@ -314,6 +314,10 @@
     }
     .card-body{
         padding : 20px;
+        .card-description{
+            max-height : 200px;
+            overflow : auto;
+        }
     }
     .thumbnail{
         width : 250px;
